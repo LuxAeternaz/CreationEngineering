@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "creationengineering:blocks/void_matter_extractor_top",
+        "front": "creationengineering:blocks/void_matter_extractor_front",
+        "side": "creationengineering:blocks/void_matter_extractor_side"
+    }
+}

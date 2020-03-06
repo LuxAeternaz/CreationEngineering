@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "creationengineering:void_matter_extractor"
+  },
+    "pattern": [
+    "IGI",
+    "G G",
+    "IFI"
+  ],
+  "type":"forge:ore_shaped",
+  "key": {
+    "G": {
+        "ore": "blockGlass",
+        "type": "forge:ore_dict"
+    },
+    "I":{
+        "ore": "ingotIron",
+        "type": "forge:ore_dict"
+    },
+    "F":{
+        "item": "minecraft:furnace"
+    }
+  }
+}

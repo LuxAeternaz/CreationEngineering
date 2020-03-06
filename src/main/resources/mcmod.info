@@ -1,0 +1,16 @@
+[
+{
+  "modid": "creation_engineering",
+  "name": "Creation Engineering",
+  "description": ".",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Annihilation"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

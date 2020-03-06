@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "creationengineering:blocks/void_matter_ore",
+        "down": "creationengineering:blocks/void_matter_ore",
+        "up": "creationengineering:blocks/void_matter_ore",
+        "north": "creationengineering:blocks/void_matter_ore",
+        "south": "creationengineering:blocks/void_matter_ore",
+        "west": "creationengineering:blocks/void_matter_ore",
+        "east": "creationengineering:blocks/void_matter_ore"
+    }
+}

@@ -1,0 +1,10 @@
+#物品
+item.void_matter.name=虚空物质
+item.extreme_order_crystal.name=极秩序水晶
+
+#方块
+tile.void_matter_ore.name=虚空物质矿
+tile.void_matter_extractor.name=虚空物质提取机
+
+#创造
+creationengineering=创世工程

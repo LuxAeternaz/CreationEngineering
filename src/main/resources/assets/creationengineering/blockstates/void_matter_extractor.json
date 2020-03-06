@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "burning=false,facing=north": { "model": "creationengineering:void_matter_extractor" },
+        "burning=false,facing=south": { "model": "creationengineering:void_matter_extractor", "y": 180 },
+        "burning=false,facing=west": { "model": "creationengineering:void_matter_extractor", "y": 270 },
+        "burning=false,facing=east": { "model": "creationengineering:void_matter_extractor", "y": 90 },                   
+        "burning=true,facing=north": { "model": "creationengineering:lit_void_matter_extractor" },
+        "burning=true,facing=south": { "model": "creationengineering:lit_void_matter_extractor", "y": 180 },
+        "burning=true,facing=west": { "model": "creationengineering:lit_void_matter_extractor", "y": 270 },
+        "burning=true,facing=east": { "model": "creationengineering:lit_void_matter_extractor", "y": 90 }
+    }
+}
