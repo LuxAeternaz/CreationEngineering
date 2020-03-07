@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import annihilation.creationengineering.CreationEngineering;
+import annihilation.creationengineering.gui.GUIHandler;
 import annihilation.creationengineering.item.CreativesTabCreationEngineering;
 import annihilation.creationengineering.item.ModItems;
 import annihilation.creationengineering.tileentity.TileEntityVoidMatterExtractor;
@@ -176,7 +178,11 @@ public class BlockVoidMatterExtractor extends BlockContainer
     }
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-    	return false;
+    	if(!world.isRemote) {
+    		player.openGui(CreationEngineering.ce, GUIHandler.GUI_VMC, world, pos.getX(),pos.getY(), pos.getZ());
+    		return true;
+    	}
+    	return true;
     }
     
 }

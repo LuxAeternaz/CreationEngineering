@@ -2,6 +2,7 @@ package annihilation.creationengineering;
 
 import annihilation.creationengineering.common.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -10,6 +11,12 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = "creationengineering" ,name = "Creation Engineering",version = "1.0.0")
 public class CreationEngineering 
 {
+	
+	public static final String MODID = "creationengineering";
+	
+	@Instance(CreationEngineering.MODID)
+	public static CreationEngineering ce;
+	
 	
 	@SidedProxy(serverSide = "annihilation.creationengineering.common.CommonProxy",
 			clientSide = "annihilation.creationengineering.client.ClientProxy")
