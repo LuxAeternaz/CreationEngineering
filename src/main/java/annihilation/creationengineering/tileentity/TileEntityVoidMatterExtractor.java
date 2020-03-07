@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
@@ -106,10 +107,10 @@ public class TileEntityVoidMatterExtractor extends TileEntity implements ITickab
 	public void update() {
 		if(!world.isRemote) {
 			state=this.world.getBlockState(pos);
-			if (!inventory.getStackInSlot(0).isEmpty()) {
+			if ((!inventory.getStackInSlot(0).isEmpty())&&this.getRecipe(inventory.extractItem(0, 1, true))!=ItemStack.EMPTY) {
 				if((!inventory.getStackInSlot(2).isEmpty())&&fuel==0){
-					if(ForgeEventFactory.getItemBurnTime(inventory.extractItem(2,1, true))>0) {
-						this.fuel=ForgeEventFactory.getItemBurnTime(inventory.extractItem(2,1, false));
+					if(TileEntityFurnace.getItemBurnTime(inventory.extractItem(2,1, true))>0) {
+						this.fuel=TileEntityFurnace.getItemBurnTime(inventory.extractItem(2,1, false));
 					}
 				}
 			}
@@ -119,12 +120,27 @@ public class TileEntityVoidMatterExtractor extends TileEntity implements ITickab
 				burnTime++;
 				this.world.setBlockState(pos, state.withProperty(BlockVoidMatterExtractor.BURNING, true));
 			} else {
+				burnTime=0;
 				this.world.setBlockState(pos, state.withProperty(BlockVoidMatterExtractor.BURNING, false));
 			}
+			if(burnTime==400) {
+				burnTime=0;
+				if(this.getRecipe(inventory.extractItem(0, 1, true))!=ItemStack.EMPTY) {
+					inventory.insertItem(1,this.getRecipe(inventory.extractItem(0, 1, false)) , false);
+				}
+			}
 			this.markDirty();
-		}
-		
+		}	
 	}
+	
+	public ItemStack getRecipe(ItemStack  stack) {
+		if(stack.getItem()==ModItems.voidMatterOre)
+		{
+			return new ItemStack(ModItems.voidMatter,1);
+		}
+		return ItemStack.EMPTY;
+	}
+	
     @Override
     public boolean shouldRefresh(World world, BlockPos pos, IBlockState oldState, IBlockState newState)
     {
