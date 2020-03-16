@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "creationengineering:blocks/extreme_order_crystal_ore",
+        "down": "creationengineering:blocks/extreme_order_crystal_ore",
+        "up": "creationengineering:blocks/extreme_order_crystal_ore",
+        "north": "creationengineering:blocks/extreme_order_crystal_ore",
+        "south": "creationengineering:blocks/extreme_order_crystal_ore",
+        "west": "creationengineering:blocks/extreme_order_crystal_ore",
+        "east": "creationengineering:blocks/extreme_order_crystal_ore"
+    }
+}

@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "creationengineering" ,name = "Creation Engineering",version = "1.0.0")
+@Mod(modid = "creationengineering" ,name = "Creation Engineering",version = "1.0.0",dependencies = "required-after:CoFHCore")
 public class CreationEngineering 
 {
 	

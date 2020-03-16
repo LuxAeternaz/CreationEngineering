@@ -4,18 +4,10 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.client.multiplayer.ChunkProviderClient;
-import net.minecraft.client.renderer.block.model.ModelManager;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome.SpawnListEntry;
-import net.minecraft.world.chunk.Chunk;
-import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkGeneratorDebug;
-import net.minecraft.world.gen.ChunkGeneratorOverworld;
-import net.minecraft.world.gen.ChunkProviderServer;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -32,13 +24,13 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 public class OreLoader implements IWorldGenerator{
 	
 	public static IWorldGenerator genOre = new OreLoader();
-	public static final WorldGenerator genVoidMaaterOre =new WorldGenMinable(ModBlocks.voidMatterOre.getDefaultState(), 4);
+	public static final WorldGenerator genVoidMaaterOre =new WorldGenMinable(ModBlocks.voidMatterOre.getDefaultState(), 6);
+	public static final WorldGenerator genExtremeOrderCrystalOre = new WorldGenMinable(ModBlocks.extremeOrderCrystalOre.getDefaultState() ,4);
 	public static Random rand;
 	public static BlockPos pos;
 
 	public OreLoader() {
 		MinecraftForge.EVENT_BUS.register(this);
-		
 	}
 	
 	@Override
@@ -58,7 +50,16 @@ public class OreLoader implements IWorldGenerator{
 			genVoidMaaterOre.generate(world, random, pos);
 		}
 		
+		for(int i =0;i<8;i++) {
+			int x = cx+random.nextInt(16);
+			int y = 0+random.nextInt(25);
+			int z = cy+random.nextInt(16);
+			pos=new BlockPos(x,y,z);
+			genExtremeOrderCrystalOre.generate(world, random,pos);
+		}
+		
 	}
+
 
 }	
 	

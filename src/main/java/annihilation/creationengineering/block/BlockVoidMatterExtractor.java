@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 import annihilation.creationengineering.CreationEngineering;
-import annihilation.creationengineering.gui.GUIHandler;
+import annihilation.creationengineering.gui.ModGUIHandler;
 import annihilation.creationengineering.item.CreativesTabCreationEngineering;
 import annihilation.creationengineering.item.ModItems;
 import annihilation.creationengineering.tileentity.TileEntityVoidMatterExtractor;
+import ibxm.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
@@ -20,6 +21,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -53,6 +55,7 @@ public class BlockVoidMatterExtractor extends BlockContainer
 	
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     public static final PropertyBool BURNING = PropertyBool.create("burning");
+    public static EntityPlayer p;
 
 	
 	public BlockVoidMatterExtractor(boolean isBurning) 
@@ -179,7 +182,8 @@ public class BlockVoidMatterExtractor extends BlockContainer
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	if(!world.isRemote) {
-    		player.openGui(CreationEngineering.ce, GUIHandler.GUI_VMC, world, pos.getX(),pos.getY(), pos.getZ());
+    		player.openGui(CreationEngineering.ce, ModGUIHandler.GUI_VMC, world, pos.getX(),pos.getY(), pos.getZ());
+    		this.p=player;
     		return true;
     	}
     	return true;

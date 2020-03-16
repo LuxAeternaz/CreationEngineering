@@ -24,7 +24,10 @@ public class ItemRenderLoader
 				new ModelResourceLocation(ModItems.voidMatterOre.getRegistryName(), "inventory"));
 		ModelLoader.setCustomModelResourceLocation(ModItems.voidMatterExtractor, 0,
 				new ModelResourceLocation(ModItems.voidMatterExtractor.getRegistryName(), "inventory"));
-
+		ModelLoader.setCustomModelResourceLocation(ModItems.extremeOrderCrystalOre, 0, 
+				new ModelResourceLocation(ModItems.extremeOrderCrystalOre.getRegistryName(),"inventory"));
+		
+		
 	}
 	
 }

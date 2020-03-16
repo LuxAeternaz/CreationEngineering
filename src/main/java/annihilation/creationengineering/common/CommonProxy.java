@@ -3,6 +3,7 @@ package annihilation.creationengineering.common;
 import annihilation.creationengineering.block.BlockLoader;
 import annihilation.creationengineering.block.ModBlocks;
 import annihilation.creationengineering.block.OreLoader;
+import annihilation.creationengineering.gui.ModGUIHandler;
 import annihilation.creationengineering.item.ModItems;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -29,6 +30,7 @@ public class CommonProxy
 	public void init(FMLInitializationEvent event)
 	{	
 		GameRegistry.registerWorldGenerator(OreLoader.genOre, 10);
+		new ModGUIHandler();
 	}
 	
 	@Mod.EventHandler

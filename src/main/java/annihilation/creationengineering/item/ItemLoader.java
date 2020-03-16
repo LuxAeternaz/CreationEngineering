@@ -15,6 +15,7 @@ public class ItemLoader {
 		event.getRegistry().register(ModItems.voidMatter);
 		event.getRegistry().register(ModItems.extremeOrderCrystal);
 		event.getRegistry().register(ModItems.voidMatterOre);
+		event.getRegistry().register(ModItems.extremeOrderCrystalOre);
 		event.getRegistry().register(ModItems.voidMatterExtractor);
 	}
 	

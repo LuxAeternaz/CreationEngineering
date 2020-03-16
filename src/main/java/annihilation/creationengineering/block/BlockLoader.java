@@ -2,6 +2,7 @@ package annihilation.creationengineering.block;
 
 import annihilation.creationengineering.tileentity.TileEntityVoidMatterExtractor;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -21,8 +22,9 @@ public class BlockLoader
 	public static void registerBlock(RegistryEvent.Register<Block> event)
 	{
 		
-		event.getRegistry().register(ModBlocks.voidMatterOre);
 		
+		event.getRegistry().register(ModBlocks.voidMatterOre);
+		event.getRegistry().register(ModBlocks.extremeOrderCrystalOre);
 		event.getRegistry().register(ModBlocks.voidMatterExtractor);
 
 		

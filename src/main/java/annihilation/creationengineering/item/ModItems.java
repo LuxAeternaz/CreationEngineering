@@ -16,8 +16,8 @@ public class ModItems
 			.setMaxStackSize(64).setCreativeTab(CreativesTabCreationEngineering.creationengineering);
 	public static Item voidMatterOre = new ItemBlock(ModBlocks.voidMatterOre).setCreativeTab(CreativesTabCreationEngineering.creationengineering)
 			.setRegistryName("void_matter_ore").setMaxStackSize(64).setUnlocalizedName("void_matter_ore");
+	public static Item extremeOrderCrystalOre = new ItemBlock(ModBlocks.extremeOrderCrystalOre).setMaxStackSize(64).setRegistryName("extreme_order_crystal_ore")
+			.setUnlocalizedName("extreme_order_crystal_ore").setCreativeTab(CreativesTabCreationEngineering.creationengineering);
 	public static Item voidMatterExtractor = new ItemBlock(ModBlocks.voidMatterExtractor).setCreativeTab(CreativesTabCreationEngineering.creationengineering)
 			.setRegistryName("void_matter_extractor").setMaxStackSize(1).setUnlocalizedName("void_matter_extractor"); 
- 
-	
 }
